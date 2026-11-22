@@ -1,0 +1,170 @@
+2026-11-21 19:02:38,303 - INFO - Aplicacion Software FJ iniciada.
+2026-11-21 19:05:19,612 - INFO - Aplicacion Software FJ iniciada.
+2026-11-21 19:06:04,978 - INFO - Cliente registrado: 123456789
+2026-11-21 19:08:04,876 - ERROR - Error al registrar cliente
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Interfaz.py", line 292, in registrar_cliente
+    cliente = Cliente(
+        identificacion,
+    ...<2 lines>...
+        telefono
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Entidades.py", line 38, in __init__
+    raise DatosInvalidosError("El correo electronico no es valido.")
+Excepciones.DatosInvalidosError: El correo electronico no es valido.
+2026-11-21 19:09:01,813 - INFO - Servicio registrado: Sala principal
+2026-11-21 19:09:30,269 - INFO - Servicio registrado: Computadores
+2026-11-21 19:09:56,342 - INFO - Servicio registrado: Asesoria de sistemas
+2026-11-21 19:12:20,185 - INFO - Reserva creada: RES001
+2026-11-21 19:12:45,914 - INFO - Reserva confirmada: RES001
+2026-11-21 19:13:16,787 - INFO - Reserva creada: RES002
+2026-11-21 19:13:28,355 - INFO - Reserva cancelada: RES002
+2026-11-21 19:13:34,803 - INFO - Reserva cancelada: RES001
+2026-11-21 19:16:28,436 - INFO - Prueba 1: cliente valido registrado.
+2026-11-21 19:16:28,437 - ERROR - Prueba 2: cliente invalido.
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 55, in <module>
+    cliente_invalido = Cliente(
+        "10002",
+    ...<2 lines>...
+        "3001234567"
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Entidades.py", line 38, in __init__
+    raise DatosInvalidosError("El correo electronico no es valido.")
+Excepciones.DatosInvalidosError: El correo electronico no es valido.
+2026-11-21 19:16:28,438 - INFO - Prueba 3: segundo cliente registrado.
+2026-11-21 19:16:28,438 - INFO - Prueba 4: servicio de sala creado.
+2026-11-21 19:16:28,438 - INFO - Prueba 5: servicio de equipos creado.
+2026-11-21 19:16:28,438 - INFO - Prueba 6: asesoria creada.
+2026-11-21 19:16:28,438 - ERROR - Prueba 7: servicio invalido.
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 135, in <module>
+    servicio_invalido = ReservaSala(
+        "Sala incorrecta",
+        50000,
+        0
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Servicios.py", line 98, in __init__
+    self.validar_parametros()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Servicios.py", line 105, in validar_parametros
+    raise DatosInvalidosError("La capacidad debe ser un entero positivo.")
+Excepciones.DatosInvalidosError: La capacidad debe ser un entero positivo.
+2026-11-21 19:16:28,440 - INFO - Prueba 8: reserva confirmada.
+2026-11-21 19:16:28,440 - INFO - Prueba 9: reserva cancelada.
+2026-11-21 19:16:28,441 - ERROR - Prueba 10: reserva sin cliente.
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 198, in <module>
+    reserva_invalida = Reserva(
+        "RES003",
+    ...<2 lines>...
+        2
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 20, in __init__
+    raise ReservaInvalidaError("Debe seleccionar un cliente valido.")
+Excepciones.ReservaInvalidaError: Debe seleccionar un cliente valido.
+2026-11-21 19:16:28,442 - ERROR - Prueba 11: servicio no disponible.
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 56, in procesar
+    costo = self.__servicio.calcular_costo(
+        duracion=self.__duracion
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Servicios.py", line 110, in calcular_costo
+    raise ServicioNoDisponibleError("La sala no esta disponible.")
+Excepciones.ServicioNoDisponibleError: La sala no esta disponible.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 226, in <module>
+    reserva3.confirmar()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 80, in confirmar
+    costo = self.procesar()
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 61, in procesar
+    raise ReservaInvalidaError(
+        "No fue posible procesar la reserva."
+    ) from error
+Excepciones.ReservaInvalidaError: No fue posible procesar la reserva.
+2026-11-21 19:16:28,443 - INFO - Finalizacion de las pruebas de Software FJ.
+2026-11-21 19:26:12,614 - ERROR - Prueba 2: correo invalido
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 58, in <module>
+    cliente_invalido = Cliente(
+        "1002",
+    ...<2 lines>...
+        "3001234567"
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Entidades.py", line 38, in __init__
+    raise DatosInvalidosError("El correo electronico no es valido.")
+Excepciones.DatosInvalidosError: El correo electronico no es valido.
+2026-11-21 19:26:12,615 - INFO - Prueba 4: sala creada correctamente
+2026-11-21 19:26:12,615 - INFO - Prueba 5: alquiler de equipos creado
+2026-11-21 19:26:12,616 - INFO - Prueba 6: asesoria creada correctamente
+2026-11-21 19:26:12,616 - ERROR - Prueba 7: capacidad de sala invalida
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 161, in <module>
+    sala_invalida = ReservaSala(
+        "Sala pequeña",
+        40000,
+        0
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Servicios.py", line 121, in __init__
+    raise DatosInvalidosError(
+        "La capacidad debe ser un entero positivo."
+    )
+Excepciones.DatosInvalidosError: La capacidad debe ser un entero positivo.
+2026-11-21 19:26:12,617 - INFO - Prueba 8: reserva confirmada
+2026-11-21 19:26:12,617 - INFO - Prueba 9: reserva cancelada
+2026-11-21 19:26:12,618 - ERROR - Prueba 10: reserva con cliente invalido
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 228, in <module>
+    reserva_invalida = Reserva(
+        "RES003",
+    ...<2 lines>...
+        1
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 20, in __init__
+    raise ReservaInvalidaError("Debe seleccionar un cliente valido.")
+Excepciones.ReservaInvalidaError: Debe seleccionar un cliente valido.
+2026-11-21 19:26:12,618 - ERROR - Prueba 11: reserva con servicio no disponible
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 56, in procesar
+    costo = self.__servicio.calcular_costo(
+        duracion=self.__duracion
+    )
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Servicios.py", line 136, in calcular_costo
+    raise ServicioNoDisponibleError(
+        "La sala no esta disponible."
+    )
+Excepciones.ServicioNoDisponibleError: La sala no esta disponible.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 259, in <module>
+    reserva3.confirmar()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 80, in confirmar
+    costo = self.procesar()
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Reservas.py", line 61, in procesar
+    raise ReservaInvalidaError(
+        "No fue posible procesar la reserva."
+    ) from error
+Excepciones.ReservaInvalidaError: No fue posible procesar la reserva.
+2026-11-21 19:26:12,619 - ERROR - Prueba 12: demostracion del uso de raise
+Traceback (most recent call last):
+  File "C:\Users\Carlo\OneDrive\Desktop\SOFTWARE_FJ\Pruebas.py", line 283, in <module>
+    raise DatosInvalidosError(
+        "Error generado intencionalmente para demostrar raise."
+    )
+Excepciones.DatosInvalidosError: Error generado intencionalmente para demostrar raise.
+2026-11-21 19:26:12,620 - INFO - Todas las pruebas del sistema finalizaron.
+2026-11-21 19:27:45,467 - INFO - Aplicacion Software FJ iniciada.
+2026-11-21 19:28:41,008 - INFO - Cliente registrado: 123456789
+2026-11-21 19:29:07,608 - INFO - Servicio registrado: Sala principal
+2026-11-21 19:29:17,409 - INFO - Reserva creada: RES001
+2026-11-21 19:29:21,217 - INFO - Reserva confirmada: RES001
+2026-11-21 19:31:49,268 - INFO - Servicio registrado: pc
+2026-11-21 19:32:00,748 - INFO - Reserva creada: RES002
+2026-11-21 19:32:04,101 - INFO - Reserva confirmada: RES002
